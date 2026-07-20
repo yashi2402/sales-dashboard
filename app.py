@@ -39,7 +39,9 @@ df = load_data()
 # =============================================================================
 # CHALLENGE 5: Session management & WebSocket handling
 # =============================================================================
-REQUESTS_PREFIX = os.environ.get('DASH_REQUESTS_PATHNAME_PREFIX', '/')
+REQUESTS_PREFIX = os.environ.get('DOMINO_RUN_HOST_PATH', '/')
+if not REQUESTS_PREFIX.endswith('/'):
+    REQUESTS_PREFIX += '/'
 
 app = dash.Dash(
     __name__,
