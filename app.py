@@ -39,13 +39,10 @@ df = load_data()
 # =============================================================================
 # CHALLENGE 5: Session management & WebSocket handling
 # =============================================================================
-DASH_REQUESTS_PATHNAME = os.environ.get('DOMINO_APP_URI', os.environ.get('DASH_REQUESTS_PATHNAME_PREFIX', '/'))
-
 app = dash.Dash(
     __name__,
     suppress_callback_exceptions=True,
     update_title=None,
-    requests_pathname_prefix=DASH_REQUESTS_PATHNAME,
     meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}]
 )
 server = app.server
